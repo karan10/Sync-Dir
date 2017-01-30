@@ -118,7 +118,7 @@ class portBox:
             # this condition will run when , both files are changed but sync is not yet done
             elif local_diff and remote_diff:
                 fo = open(LOCAL_PATH+p, 'a')
-                fo.write( '\n\n>>>>>>>>>>>>>>>>>>>>>>>>> Resolve Conflict >>>>>>>>>>>>>>>>>>>>>>>>>\n' + local_diff + '\n====================================================================' )
+                fo.write( '\n\n>>>>>>>>>> Resolve Conflict (help: http://www.computerhope.com/unix/udiff.htm) >>>>>>>>>>\n' + local_diff + '\n====================================================================' )
                 fo.close()
                 output = subprocess.Popen(["cp", '-r',LOCAL_PATH+p, REMOTE_PATH+p], stdout=subprocess.PIPE)
                 output = subprocess.Popen(["cp", '-r',LOCAL_PATH+p, os.path.join('/.'.join(REMOTE_PATH[:-1].rsplit('/',1)),p)], stdout=subprocess.PIPE)
